@@ -1,6 +1,6 @@
-package com.dipanshu.user_service.service;
+package com.dipanshu.product_service.service;
 
-import com.dipanshu.user_service.service.impl.InventoryService;
+import com.dipanshu.product_service.service.impl.InventoryService;
 
 public class InventoryServiceImpl implements InventoryService {
     @Override

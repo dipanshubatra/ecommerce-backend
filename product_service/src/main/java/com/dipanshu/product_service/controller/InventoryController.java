@@ -1,6 +1,6 @@
-package com.dipanshu.user_service.Controller;
+package com.dipanshu.product_service.controller;
 
-import com.dipanshu.user_service.service.impl.InventoryService;
+import com.dipanshu.product_service.service.impl.InventoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

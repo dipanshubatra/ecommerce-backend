@@ -1,4 +1,4 @@
-package com.dipanshu.user_service.entity;
+package com.dipanshu.product_service.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
