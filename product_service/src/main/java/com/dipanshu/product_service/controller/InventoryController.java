@@ -1,11 +1,9 @@
 package com.dipanshu.product_service.controller;
 
-import com.dipanshu.product_service.service.impl.InventoryService;
+import com.dipanshu.product_service.dto.InventoryRequest;
+import com.dipanshu.product_service.service.InventoryService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/inventory")
@@ -18,26 +16,23 @@ public class InventoryController {
     }
 
     @PostMapping("/reserve")
-    public ResponseEntity<String> reserve(@RequestParam Long productId,
-                                          @RequestParam int quantity) {
+    public ResponseEntity<String> reserve(@RequestBody InventoryRequest request) {
 
-        inventoryService.reserveStock(productId, quantity);
+        inventoryService.reserveStock(request.getProductId(), request.getQuantity());
         return ResponseEntity.ok("Stock reserved");
     }
 
     @PostMapping("/release")
-    public ResponseEntity<String> release(@RequestParam Long productId,
-                                          @RequestParam int quantity) {
+    public ResponseEntity<String> release(@RequestBody InventoryRequest request) {
 
-        inventoryService.releaseStock(productId, quantity);
+        inventoryService.releaseStock(request.getProductId(), request.getQuantity());
         return ResponseEntity.ok("Stock released");
     }
 
     @PostMapping("/confirm")
-    public ResponseEntity<String> confirm(@RequestParam Long productId,
-                                          @RequestParam int quantity) {
+    public ResponseEntity<String> confirm(@RequestBody InventoryRequest request) {
 
-        inventoryService.confirmStock(productId, quantity);
+        inventoryService.confirmStock(request.getProductId(), request.getQuantity());
         return ResponseEntity.ok("Stock confirmed");
     }
 }

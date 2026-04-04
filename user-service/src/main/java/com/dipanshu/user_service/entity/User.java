@@ -32,5 +32,4 @@ public class User {
 
     private LocalDateTime createdAt;
 
-    // constructors, getters, setters
 }

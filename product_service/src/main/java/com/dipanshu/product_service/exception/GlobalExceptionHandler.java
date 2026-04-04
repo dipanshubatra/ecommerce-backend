@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(UserAlreadyExistException.class)
-    public ResponseEntity<?> handleUserExists(UserAlreadyExistException ex) {
+    @ExceptionHandler(InventoryNotFoundException.class)
+    public ResponseEntity<?> handleUserExists(InventoryNotFoundException ex) {
         return ResponseEntity
                 .status(HttpStatus.CONFLICT)
                 .body(new ErrorResponse(ex.getMessage()));
@@ -22,7 +22,7 @@ public class GlobalExceptionHandler {
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(new ErrorResponse("Something went wrong"));
     }
-    @ExceptionHandler(UserNotFoundException.class)
+    @ExceptionHandler(InsufficientStockException.class)
     public ResponseEntity<?> handleUserNotFound(){
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)

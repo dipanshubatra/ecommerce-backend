@@ -1,9 +1,6 @@
 package com.dipanshu.product_service.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +15,8 @@ import lombok.Setter;
 public class Inventory {
     @Id
     private Long productId;
+    @Version
+    private Long version;
     @Column(nullable = false)
     private int availableStock;
     @Column(nullable = false)
